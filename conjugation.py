@@ -261,20 +261,21 @@ class VerbHashTable():
         
         return self.table[index]
         
-# Examples
+# Examples.
+# Excluding a field will resort to some default. Note that all first-form verbs require a stem. 
 conj= Conjugate()
-print(conj.generate("q-t-l",  "pres", "1st", "sing", "masc", stem="u", mood="ind", form="1", voice="active"))
-print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem", stem="u", mood="ind", form="1", voice="active"))
-print(conj.generate("q-t-l",  "perf", "3rd", "plu",  "fem", form="2", voice="active"))
+print(conj.generate("q-t-l",  "pres", "1st", "sing", "masc", mood="ind", form="1",  voice="active", stem="u"))
+print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem",  mood="ind", form="1",  voice="active", stem="u"))
 print(conj.generate("q-t-l",  "pres", "1st", "sing", "masc", mood="ind", form="10", voice="active"))
-print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem", mood="ind", form="10", voice="active"))
-print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem", mood="ind", form="10", voice="passive"))
-print(conj.generate("kh-b-r", "pres", "1st", "sing", "masc", stem="u", mood="ind", form="1", voice="active"))
-print(conj.generate("kh-b-r", "perf", "3rd", "plu",  "fem", stem="a", mood="ind", form="1", voice="active"))
-print(conj.generate("kh-b-r", "perf", "3rd", "plu",  "fem", form="2", voice="active"))
+print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem",  mood="ind", form="10", voice="active"))
+print(conj.generate("q-t-l",  "pres", "3rd", "plu",  "fem",  mood="ind", form="10", voice="passive"))
+print(conj.generate("q-t-l",  "perf", "3rd", "plu",  "fem",  form="2", voice="active"))
+print(conj.generate("kh-b-r", "pres", "1st", "sing", "masc", mood="ind", form="1",  voice="active", stem="u"))
+print(conj.generate("kh-b-r", "perf", "3rd", "plu",  "fem",  mood="ind", form="1",  voice="active", stem="a"))
 print(conj.generate("kh-b-r", "pres", "1st", "sing", "masc", mood="ind", form="10", voice="active"))
-print(conj.generate("kh-b-r", "pres", "3rd", "plu",  "fem", mood="ind", form="5", voice="active"))
-print(conj.generate("kh-b-r", "pres", "3rd", "plu",  "fem", mood="ind", form="8", voice="passive"))
+print(conj.generate("kh-b-r", "pres", "3rd", "plu",  "fem",  mood="ind", form="5",  voice="active"))
+print(conj.generate("kh-b-r", "pres", "3rd", "plu",  "fem",  mood="ind", form="8",  voice="passive"))
+print(conj.generate("kh-b-r", "perf", "3rd", "plu",  "fem",  form="4", voice="active"))
 
 print(conj.generate_all("k-t-b"))
 print(conj.generate_all("s-l-m"))
